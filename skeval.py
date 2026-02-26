@@ -2,7 +2,7 @@
 
 class Model:
     def __init__(self, matrix, model="Decision Tree"):
-        """Initializes the Model with a confusion matrix, optional name, and extra data."""
+        """Initializes the Model with a confusion matrix, optional name,"""
         self.model = model
         self.matrix = matrix
         self.results = {}
