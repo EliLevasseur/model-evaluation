@@ -47,6 +47,12 @@ class Model:
         error_rate = (fp + fn) / (tp + tn + fp + fn)
         self.results['error_rate'] = error_rate
 
+    def overall_model_cost(self, matrix, cost_fp, cost_fn):
+        """Calculates the overall model cost based on false positives and false negatives."""
+        fp = matrix.iloc[0, 1]
+        fn = matrix.iloc[1, 0]
+        overall_cost = (fp * cost_fp) + (fn * cost_fn)
+        self.results['overall_model_cost'] = overall_cost
 
     def get_results(self):
         """Returns all computed metric values."""
